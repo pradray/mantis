@@ -1,0 +1,60 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body 
+background="Wallpaper1.jpg">
+<h1>Mantis Cup 2018</h1><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<div>
+ Email Id:<input type="text" name="emailId" id="emailId">  <input type="submit" name="submit" value="Next" onClick = "validation();"><br/><br/>
+</div>
+<div id ="passwordDiv" style="display: none;margin-right: 52px">
+Password:<input type="password" name="password" id="password" ><br/><br/>
+
+<form action="footballProject.html" method="post" onsubmit="return validation();">
+<input type="submit" name="submit" value="Log In" id="btnSubmit">
+</form>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+
+var isExistingEmail = true;
+
+function validation()
+{
+var emailId= document.getElementById('emailId').value;
+
+var reg = /^\w+([-+.']\ w+)*@\w+([-. ]\w+)*\.\w+([-. ]\w+)*$/;
+if(reg.test(emailId))
+{
+ document.getElementById('passwordDiv').style.display = "block";
+ if(isExistingEmail)
+	{
+		
+		document.getElementById('btnSubmit').value = 'Log In'; 
+		
+	}
+ else
+	{
+		document.getElementById('btnSubmit').value = 'Sign Up'; 
+	}
+}
+else
+{
+alert("Please provide a valid Email Id"); 
+
+}
+
+
+
+}
+
+</script>
+</body>
+</html>

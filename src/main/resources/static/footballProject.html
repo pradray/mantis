@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <link rel="stylesheet" href="mantis.css">  
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+            <script src="js/dataTransfer.js"></script>
+            <script src="js/Project.js"></script>
+            <script src="js/leaderBoard.js"></script>
+            <script>
+                    $( function() {
+                    $( "#accordion" ).accordion();
+                    } );
+                    </script>
+    </head>
+
+
+    <body  onload="dataFromDataBase()">
+
+
+        <div class="a"><div>
+        <div id ="d1" align="center">
+            <h1>Today's Matches</h1>
+            <label id="User"></label>
+        </div>
+   
+        
+        
+      <div id="UserScore" align="right">  Your Score 50   </div>      
+     
+     <div id="accordion"> 
+
+
+                        <h3>Match 1</h3>
+                            <div>
+                                    <table id="todaysMatch" align="center" >
+                                                
+                                            <tr id="match1"> 
+                                                
+                                                <td><label id="matchIdData"></label></td>
+                                                <td id="team1"> <label id="team1Label"></label></td>
+                                                <td id="team1Score"><label>(</label><label id="team1ScoreLabel"></label></label>)</label></td>
+                                                <td><label id="vs">VS</label></td>
+                                                <td id="team2Score"><label>(</label><label id="team2ScoreLabel"></label> <label>)</label></td>
+                                                <td id="team2"><label id="team2Label"></label></td>
+                                                <td><label id="matchTiming">Match Time</label></td>
+                                                <td id="myTime"><label id="match1TimingData"></label><label>:</label><label id="match1TimingData2"></label><label>p.m</label></td>
+                                            </tr>
+                    
+                    
+                                            <tr id="match1prediction">
+                                                <td></td>
+                                                <td id="team1"></td>
+                                                <td id="team1PredictedScore1"><input type="text" name="team1" id="t1"></td>
+                                                <td></td>
+                                                <td id="team2PredictedScore1"> <input type="text" name="team2" id="t2"></td>
+                                                <td id="team2"></td>
+                                                
+                                                <td></td>
+                                            
+                                            </tr>
+                                            <tr></tr>
+                    
+                                
+                                </table>
+
+                            </div>
+
+
+
+
+        <br>
+
+
+
+                <h3>Match 2</h3>
+                <div>
+                        <table id="todaysMatch2" align="center" >
+                                                
+                                
+                                <tr id="match2"> 
+                                    
+                                    <td> <label id="matchIdData2"></label></td>
+                                    <td id="match2Team1"> <label id="match2team1Label"></label></td>
+                                    <td id="match2team1Score"><label>(</label><label id="match2team1ScoreLabel"></label></label>)</label></td>
+                                    <td><label id="match2vs">VS</label></td>
+                                    <td id="match2Team2"><label>(</label><label id="match2Team2ScoreLabel"></label> <label>)</label></td>
+                                    <td id="match2Team2Score"><label id="match2Team2Label"></label></td>
+                                    <td><label id="match2matchTiming">Match Time</label></td>
+                                    <td id="myTime"><label id="match2TimingData"></label><label>:</label><label id="match2TimingData2"></label><label>p.m</label></td>
+                                </tr>
+
+
+                                <tr id="match2prediction">
+                                    <td></td>
+                                    <td id="match2team1"></td>
+                                    <td id="match2team1PredictedScore1"><input type="text" name="team1" id="t3"></td>
+                                    <td></td>
+                                    <td id="match2team2PredictedScore1"> <input type="text" name="team2" id="t4"></td>
+                                    <td id="match2team2"></td>
+                                    
+                                    <td></td>
+                                
+                                </tr>
+                                <tr></tr>
+
+                            
+                        </table>
+
+                </div>
+
+
+
+      <br>
+
+
+                <h3>Match 3</h3>
+                <div>
+                        <table id="todaysMatch3" align="center" >
+                                                    
+                                    
+                                <tr id="match3"> 
+                                    
+                                    <td> <label id="matchIdData3"></label></td>
+                                    <td id="match3team1"> <label id="match3team1Label"></label></td>
+                                    <td id="match3team1Score"><label>(</label><label id="match3team1ScoreLabel"></label></label>)</label></td>
+                                    <td><label id="vs">VS</label></td>
+                                    <td id="match3team2"><label>(</label><label id="match3team2ScoreLabel"></label> <label>)</label></td>
+                                    <td id="match3team2Score"><label id="match3team2Label"></label></td>
+                                    <td><label id="match3matchTiming">Match Time</label></td>
+                                    <td id="myTime"><label id="match3TimingData"></label><label>:</label><label id="match3TimingData2"></label><label>p.m</label></td>
+                                </tr>
+
+
+                                <tr id="match3prediction">
+                                    <td></td>
+                                    <td id="match3team1"></td>
+                                    <td id="match3team1PredictedScore1"><input type="text" name="team1" id="t5"></td>
+                                    <td></td>
+                                    <td id="match3team2PredictedScore1"> <input type="text" name="team2" id="t6"></td>
+                                    <td id="match3team2"></td>
+                                    <td></td>
+                                    <td><button id="buttonSubmit" >SUBMIT</button></td>
+                                
+                                </tr>
+                            
+                        
+
+                    </table>
+                </div>
+
+ </div>         
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="div3">
+                    <h1 id="abc"  align="right">LeaderBoard</h1>
+                    <table id="leaderBoard" align="right" border="1">
+                                        
+                                                <thead>
+                                                    <th>Rank</th>
+                                                    <th>UserID</th>
+                                                    <th>Points</th>
+                                                </thead>
+                        
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td><label id="user1"></label></td>
+                                                    <td><label id="points1"></label></td>
+                                            </tr>
+                        
+                                            <tr>
+                                                    <td>2</td>
+                                                    <td>testUser2</td>
+                                                    <td>20</td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                    <td>3</td>
+                                                    <td>testUser3</td>
+                                                    <td>10</td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                    <td>4</td>
+                                                    <td>testUser4</td>
+                                                    <td>5</td>
+                                            </tr>
+                                            
+                                            <tr>
+                                                    <td>5</td>
+                                                    <td>testUser21</td>
+                                                    <td>2</td>
+                                            </tr>
+
+                                        </table>
+                    
+</div>                    
+
+
+
+
+</body>
+</html>
