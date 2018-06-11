@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -26,25 +27,36 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     	UserDetailsService userDetailsService = mongoUserDetails();
         auth.userDetailsService(userDetailsService);
     }
+    
+    @Override
+	public void configure(WebSecurity webSecurity) throws Exception {
+		// TODO Auto-generated method stub
+		webSecurity
+				.ignoring()
+				.antMatchers("*.js")
+				.antMatchers("*.css")
+				.antMatchers("*.jpg")
+				.antMatchers("*.ico");
+	}
 
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
 
-        httpSecurity
-                .authorizeRequests()
-                .antMatchers("/").permitAll()
-                .anyRequest()
-                .authenticated()
-                //.antMatchers("**/rest/*")
-                .and()
-                //.addFilterBefore(customFilter(), BasicAuthenticationFilter.class)
-                .httpBasic();
+    	httpSecurity
+	        .authorizeRequests()
+	        .antMatchers("/").permitAll()
+	        .antMatchers("/js/**").permitAll()
+	        .antMatchers("/*.css").permitAll()
+	        .antMatchers("/*.ico").permitAll()
+	        .antMatchers("/*.jpg").permitAll()
+	        .antMatchers("/rest/**").hasRole("user")
+	        .anyRequest()
+	        .fullyAuthenticated()
+	        .and()
+	        //.addFilterBefore(customFilter(), BasicAuthenticationFilter.class)
+	        .httpBasic();
         httpSecurity.csrf().disable();
 
     }
 
-    /*@Bean
-    public CustomFilter customFilter() {
-        return new CustomFilter();
-    }*/
 }
